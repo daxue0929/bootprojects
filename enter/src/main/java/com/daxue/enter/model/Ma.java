@@ -1,5 +1,9 @@
 package com.daxue.enter.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.Arrays;
@@ -13,10 +17,12 @@ public class Ma implements Serializable,Comparable<Ma> {
     /**
      * db_column: msg_id
      */
+    @JsonIgnore              //忽略不返回到前端
     public long msgId;
     /**
      * db_column: acc_id
      */
+    @JsonInclude(JsonInclude.Include.NON_NULL)   //如果为空则不返回到前端
     public int accId;
     /**
      * db_column: time
@@ -29,6 +35,7 @@ public class Ma implements Serializable,Comparable<Ma> {
     /**
      * db_column: timeout
      */
+    @JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss", locale = "zh", timezone = "GMT+8")   //时间日期格式化处理
     public int timeout;
     /**
      * db_column: flags

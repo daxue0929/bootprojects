@@ -75,22 +75,11 @@ public class Test01 {
 
     }
 
+    @Test
+    public void test006 () {
+        System.out.println(new Date().getTime() /1000);
+    }
+
 }
 
-class RandomNum implements Runnable {
-    private ArrayList<String> arrayList = new ArrayList<>();
 
-    public ArrayList<String> getArrayList() {
-        return arrayList;
-    }
-
-    public void setArrayList(ArrayList<String> arrayList) {
-        this.arrayList = arrayList;
-    }
-
-    @Override
-    public void run() {
-        Random random = new Random();
-        arrayList.add(Thread.currentThread().getName()+"----------------"+random.nextInt(100));
-    }
-}
