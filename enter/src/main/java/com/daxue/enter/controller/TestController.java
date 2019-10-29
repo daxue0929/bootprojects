@@ -1,24 +1,23 @@
 package com.daxue.enter.controller;
 
-import com.daxue.Test;
 import com.daxue.enter.dao.MaDaoTest;
 import com.daxue.enter.model.Ma;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+//http://2738y987a8.qicp.vip:24325
 @RestController
 public class TestController {
 
-    @Autowired
-    private MaDaoTest maDaoTest;
-
-    @GetMapping(value = "/")
+    @GetMapping(value = "/test")
     public void test() {
+        System.out.println("123");
+    }
 
-        System.out.println("dasd");
-        Ma ma = maDaoTest.get(11);
-
-        System.out.println(ma);
+    @GetMapping(value = "/hello")
+    public String go () {
+        System.out.println("哈哈");
+        return "Hello World";
     }
 }

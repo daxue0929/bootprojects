@@ -1,4 +1,4 @@
-package com.daxue.enter;
+package com.daxue;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
