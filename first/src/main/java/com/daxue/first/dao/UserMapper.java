@@ -1,4 +1,4 @@
-package com.daxue.first;
+package com.daxue.first.dao;
 
 import com.daxue.first.model.User;
 import org.apache.ibatis.annotations.Mapper;
