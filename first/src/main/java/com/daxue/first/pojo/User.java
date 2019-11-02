@@ -1,4 +1,4 @@
-package com.daxue.first.model;
+package com.daxue.first.pojo;
 
 import org.springframework.stereotype.Component;
 
@@ -11,6 +11,36 @@ public class User {
     public Integer age;
 
     public Short status;
+
+    public String account;
+
+    public String password;
+
+    public Integer groupId;
+
+    public String getAccount() {
+        return account;
+    }
+
+    public void setAccount(String account) {
+        this.account = account;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Integer getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(Integer groupId) {
+        this.groupId = groupId;
+    }
 
     public Integer getId() {
         return id;

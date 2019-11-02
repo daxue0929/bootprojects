@@ -1,11 +1,9 @@
 package com.daxue.first.dao;
 
-import com.daxue.first.model.User;
+import com.daxue.first.base.dao.BaseMapper;
+import com.daxue.first.pojo.User;
 import org.apache.ibatis.annotations.Mapper;
 
-import java.util.List;
-
 @Mapper
-public interface UserMapper {
-    List<User> getList();
+public interface UserMapper extends BaseMapper<User> {
 }
