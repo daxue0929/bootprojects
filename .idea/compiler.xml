@@ -15,6 +15,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="enter" options="-parameters" />
+      <module name="orm" options="-parameters" />
       <module name="first" options="-parameters" />
     </option>
   </component>

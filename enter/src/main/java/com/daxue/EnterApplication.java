@@ -5,7 +5,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("com.daxue.enter.dao")
 public class EnterApplication {
 
     public static void main(String[] args) {
