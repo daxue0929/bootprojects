@@ -1,12 +1,11 @@
 package com.daxue.test.A;
 
+import com.daxue.test.utils.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.ListOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -16,12 +15,13 @@ public class ATestContrller {
     RedisTemplate redisTemplate;
 
     @Autowired
-    public User user;
+    RedisUtil redisUtil;
 
-    @GetMapping(value = "/a/message")
-    public Object mesage() {
 
-        ListOperations listOperations = redisTemplate.opsForList();
+//    @GetMapping(value = "/a/message")
+//    public Object mesage() {
+
+//        ListOperations listOperations = redisTemplate.opsForList();
 
 //        valueOperations.set("a","456");
 //        valueOperations.set("b", "123");
@@ -33,27 +33,34 @@ public class ATestContrller {
 //
 //            listOperations.leftPush("tt", user);
 //        }
-        User userTemp = null;
-        Long size = listOperations.size("user");
-        for (int i = 0; i< size; i++) {
+//        User userTemp = null;
+//        Long size = listOperations.size("user");
+//        for (int i = 0; i< size; i++) {
 //            userTemp = (User) listOperations.index("tt", i);
 //            if (user.getId() == 103) {
 //                Long remove = listOperations.remove("tt", i, user);
 //            }
 
-        }
+//        }
 //        userTemp = (User) listOperations.index("tt", 3);
 
-        List<User> userList = (List<User>) listOperations.range("user", 0, size);
-
-        List<User> users = new ArrayList<>();
-        userList.forEach((temp) -> {
-            if (temp.getId() == 105) {
-                users.add(temp);
-            }
-        });
+//        List<User> userList = (List<User>) listOperations.range("user", 0, size);
+//
+//        List<User> users = new ArrayList<>();
+//        userList.forEach((temp) -> {
+//            if (temp.getId() == 105) {
+//                users.add(temp);
+//            }
+//        });
 //        return listOperations.size("tt");
 //        return listOperations.leftPop("tt");
-        return users;
+//        return users;
+//    }
+
+    @GetMapping(value = "/a/getAllList")
+    public Object test001() {
+        List<User> user = (List<User>) redisUtil.getAllList("user");
+
+        return user;
     }
 }
