@@ -18,6 +18,8 @@ public class ATestContrller {
     RedisUtil redisUtil;
 
 
+
+
 //    @GetMapping(value = "/a/message")
 //    public Object mesage() {
 
@@ -61,6 +63,25 @@ public class ATestContrller {
     public Object test001() {
         List<User> user = (List<User>) redisUtil.getAllList("user");
 
+
+
         return user;
+    }
+
+    @GetMapping(value = "test02")
+    public User test02() {
+        User user = new User();
+        user.setId(123);
+        user.setAge(18);
+        user.setName("王雪迪");
+
+        return user;
+    }
+
+    @GetMapping(value = "index")
+    public String index() {
+        System.out.println("执行方法内内容");
+
+        return "123";
     }
 }
