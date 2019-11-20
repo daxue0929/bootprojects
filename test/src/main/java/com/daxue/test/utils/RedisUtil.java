@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 @Component
@@ -197,7 +198,28 @@ public class RedisUtil {
 
 
 
+    /**
+     * add the value or much value to the set of this key
+     * @param key
+     * @param value
+     * @return
+     */
+    public boolean addSet(String key, Object ...value) {
+        try {
+            redisTemplate.opsForSet().add(key, value);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 
-
-
+    /**
+     * about set: get all list of the key
+     * @param key
+     * @return
+     */
+    public Set getAllSet(String key) {
+        return redisTemplate.opsForSet().members(key);
+    }
 }

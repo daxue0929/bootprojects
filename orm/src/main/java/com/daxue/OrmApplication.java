@@ -1,5 +1,7 @@
 package com.daxue;
 
+//import com.daxue.services.RedisService;
+//import org.springframework.beans.factory.annotation.Autowired;
 import com.daxue.services.RedisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -18,7 +20,9 @@ public class OrmApplication {
 
     @GetMapping(value = "/")
     public String test() {
-        return redisService.hello();
+        String projectPath = System.getProperty("user.dir");
+//        return redisService.hello();
+        return projectPath;
     }
 
 

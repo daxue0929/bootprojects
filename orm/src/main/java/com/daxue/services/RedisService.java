@@ -21,18 +21,4 @@ public class RedisService {
 
         return (String) valueOperations.get("a");
     }
-
-
-//    @Autowired(required = false)
-//    public void setRedisTemplate(RedisTemplate redisTemplate) {
-//        RedisSerializer stringSerializer = new StringRedisSerializer();
-//        redisTemplate.setKeySerializer(stringSerializer);
-//        redisTemplate.setValueSerializer(stringSerializer);
-//        redisTemplate.setHashKeySerializer(stringSerializer);
-//        redisTemplate.setHashValueSerializer(stringSerializer);
-//        this.redisTemplate = redisTemplate;
-//    }
-
-
-
 }

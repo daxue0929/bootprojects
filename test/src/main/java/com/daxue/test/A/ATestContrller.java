@@ -1,12 +1,15 @@
 package com.daxue.test.A;
 
+import com.daxue.test.config.Keys;
 import com.daxue.test.utils.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.PostConstruct;
 import java.util.List;
+import java.util.Set;
 
 @RestController
 public class ATestContrller {
@@ -17,8 +20,13 @@ public class ATestContrller {
     @Autowired
     RedisUtil redisUtil;
 
+    @Autowired
+    Keys keys;
 
-
+    @PostConstruct
+    public void init () {
+        keys.setKeys(redisUtil.getAllSet("key"));
+    }
 
 //    @GetMapping(value = "/a/message")
 //    public Object mesage() {
@@ -63,10 +71,20 @@ public class ATestContrller {
     public Object test001() {
         List<User> user = (List<User>) redisUtil.getAllList("user");
 
-
+        redisUtil.delKeys("user");
 
         return user;
     }
+
+    @GetMapping(value = "/a/addSet")
+    public Set addKey() {
+//        redisUtil.addSet("key", "123","789","user","today");
+        redisUtil.addSet("key", "hahha");
+        Object key = redisUtil.getAllSet("key");
+
+        return keys.getKeys();
+    }
+
 
     @GetMapping(value = "test02")
     public User test02() {

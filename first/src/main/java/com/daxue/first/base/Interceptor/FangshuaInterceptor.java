@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 public class FangshuaInterceptor extends HandlerInterceptorAdapter {
 
     @Autowired
-    RedisService redisService;
+//    RedisService redisService;
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
