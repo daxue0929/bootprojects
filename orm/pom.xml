@@ -10,10 +10,12 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>com.daxue</groupId>
     <artifactId>orm</artifactId>
-
+    <version>0.0.1-SNAPSHOT</version>
     <name>orm</name>
-    <!-- FIXME change it to the project's website -->
+    <description>项目权限管理以及账户入口</description>
+
     <url>http://www.example.com</url>
 
     <properties>

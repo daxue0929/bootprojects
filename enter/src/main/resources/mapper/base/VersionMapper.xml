@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.daxue.enter.dao.PubDataMapper">
+    <resultMap id="versionResultMap" type="com.daxue.enter.pojo.Version">
+        <id property="id" column="id" />
+        <result property="versionId" column="version_id" />
+        <result property="description" column="description" />
+        <result property="time" column="time" />
+        <result property="status" column="status" />
+        <result property="detail" column="detail" />
+        <result property="startTime" column="start_time" />
+    </resultMap>
+
+    <sql id="versionPojo">
+        id, version_id, description, time, status, detail, start_time
+    </sql>
+    
+    <select id="list" resultMap="versionResultMap">
+        SELECT
+        <include refid="versionPojo" />
+        FROM base.version
+    </select>
+    
+</mapper>
