@@ -1,4 +1,4 @@
-package com.daxue.enter.dao;
+package com.daxue.enter.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;

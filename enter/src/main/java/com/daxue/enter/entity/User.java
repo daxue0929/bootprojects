@@ -1,4 +1,4 @@
-package com.daxue.enter.pojo;
+package com.daxue.enter.entity;
 
 import lombok.Data;
 import org.springframework.stereotype.Component;

@@ -1,7 +1,7 @@
 package com.daxue.enter.service;
 
-import com.daxue.enter.dao.UserMapper;
-import com.daxue.enter.pojo.User;
+import com.daxue.enter.mapper.UserMapper;
+import com.daxue.enter.entity.User;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
