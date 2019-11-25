@@ -4,6 +4,7 @@ import com.daxue.enter.entity.Today;
 import com.daxue.enter.mapper.TodayMapper;
 import com.daxue.enter.service.TodayService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,4 +18,15 @@ import org.springframework.stereotype.Service;
 @Service
 public class TodayServiceImpl extends ServiceImpl<TodayMapper, Today> implements TodayService {
 
+    @Async
+    public void test() {
+        try {
+            Thread.sleep(2000);
+
+            System.out.println("异步方法-------");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+    }
 }
