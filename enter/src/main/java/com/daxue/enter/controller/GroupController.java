@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
  *  前端控制器
  * </p>
  *
- * @author liujufu_autoGeneration
+ * @author daxue0929
  * @since 2019-11-25
  */
 @RestController
-@RequestMapping("/function")
-public class FunctionAction {
+@RequestMapping("/group")
+public class GroupController {
 
 }

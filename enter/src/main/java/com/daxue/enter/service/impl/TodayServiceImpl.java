@@ -1,8 +1,8 @@
 package com.daxue.enter.service.impl;
 
-import com.daxue.enter.entity.Function;
-import com.daxue.enter.mapper.FunctionMapper;
-import com.daxue.enter.service.FunctionService;
+import com.daxue.enter.entity.Today;
+import com.daxue.enter.mapper.TodayMapper;
+import com.daxue.enter.service.TodayService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2019-11-25
  */
 @Service
-public class FunctionServiceImpl extends ServiceImpl<FunctionMapper, Function> implements FunctionService {
+public class TodayServiceImpl extends ServiceImpl<TodayMapper, Today> implements TodayService {
 
 }

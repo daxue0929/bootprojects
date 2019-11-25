@@ -1,6 +1,6 @@
 package com.daxue.enter.service;
 
-import com.daxue.enter.entity.Function;
+import com.daxue.enter.entity.Group;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author daxue0929
  * @since 2019-11-25
  */
-public interface FunctionService extends IService<Function> {
+public interface GroupService extends IService<Group> {
 
 }

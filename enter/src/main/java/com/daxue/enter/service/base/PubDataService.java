@@ -1,4 +1,4 @@
-package com.daxue.enter.service.pub;
+package com.daxue.enter.service.base;
 
 import com.daxue.enter.dao.PubDataMapper;
 import com.daxue.enter.pojo.Version;

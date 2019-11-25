@@ -1,7 +1,6 @@
-package com.daxue.enter.controller.user;
+package com.daxue.enter.controller;
 
 import com.daxue.enter.service.UserService;
-
 import com.daxue.enter.util.ResultData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,8 +19,8 @@ public class UserController {
     @Autowired
     ResultData result;
 
-    @GetMapping("/selectById")
-    public ResultData selectById(@RequestParam Integer id) {
+    @GetMapping("/getById")
+    public ResultData getById(@RequestParam Integer id) {
         try {
             result.setData(manager.selectById(id));
             result.setCode(ResultData.SUCCESS);
@@ -30,4 +29,6 @@ public class UserController {
         }
         return result;
     }
+
+
 }

@@ -49,10 +49,10 @@ public class CodeGenerator {
 
         gc.setOpen(false);
         gc.setDateType(ONLY_DATE);
-        gc.setAuthor("liujufu_autoGeneration");// 作者
+        gc.setAuthor("daxue0929");// 作者
 
         // 自定义文件命名，注意 %s 会自动填充表实体属性！
-        gc.setControllerName("%sAction");
+        gc.setControllerName("%sController");
         gc.setServiceName("%sService");
         gc.setServiceImplName("%sServiceImpl");
         gc.setMapperName("%sMapper");
@@ -68,12 +68,9 @@ public class CodeGenerator {
         dsc.setPassword("root");
         dsc.setDbType(DbType.POSTGRE_SQL);
         dsc.setUrl("jdbc:postgresql://39.107.127.218:5431/study");
-        dsc.setSchemaName("busi");
-        mpg.setDataSource(dsc);
 
         // 包配置
         final PackageConfig pc = new PackageConfig();
-
         pc.setParent("com.daxue.enter");
         dsc.setSchemaName("base");
 
@@ -85,7 +82,8 @@ public class CodeGenerator {
         m.put("service_path",gc.getOutputDir() + File.separator + (pc.getParent().replaceAll("\\.", "\\" + File.separator)) +"/service");
         m.put("service_impl_path",gc.getOutputDir() + File.separator + (pc.getParent().replaceAll("\\.", "\\" + File.separator)) + "/service/impl");
         m.put(ConstVal.CONTROLLER_PATH,gc.getOutputDir() + File.separator + (pc.getParent().replaceAll("\\.", "\\" + File.separator)) + "/controller");
-        m.put(ConstVal.XML_PATH,projectPath+"/src/main/resources/mapper");
+
+        m.put(ConstVal.XML_PATH,projectPath+"/src/main/resources/mapper/" + dsc.getSchemaName()); //对应xml文件的位置
 
         pc.setPathInfo(m);
         // 自定义配置

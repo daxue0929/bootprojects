@@ -11,6 +11,11 @@ public class ResultData {
     public static final int SUCCESS = 200;
 
     /**
+     * 接口调用状态
+     */
+    public boolean status = true;
+
+    /**
      * code 数据状态码
      * 200 : 正常返回
      */
