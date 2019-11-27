@@ -12,5 +12,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2019-11-25
  */
 public interface TodayService extends IService<Today> {
-    void test();
+    public void test();
 }
