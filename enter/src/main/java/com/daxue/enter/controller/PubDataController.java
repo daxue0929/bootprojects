@@ -5,11 +5,13 @@ import com.daxue.enter.util.ResultData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
+@CrossOrigin
 @RestController
 @RequestMapping(value = "/ajax/pubData")
 public class PubDataController {
@@ -21,15 +23,17 @@ public class PubDataController {
 
 
 
-    @GetMapping(value = "listVersion")
+    @GetMapping(value = "/listVersion")
     public ResultData list() {
         ResultData resultData = new ResultData();
         try {
+
             resultData.setData(pubManager.listVersion());
 
             resultData.setStatus(true);
             resultData.setCode(200);
             resultData.setDesc(null);
+            logger.info("successful");
         } catch (Exception e) {
             logger.error(e.getMessage());
         }

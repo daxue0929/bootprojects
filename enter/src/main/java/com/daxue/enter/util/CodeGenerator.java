@@ -72,7 +72,7 @@ public class CodeGenerator {
         // 包配置
         final PackageConfig pc = new PackageConfig();
         pc.setParent("com.daxue.enter");
-        dsc.setSchemaName("base");
+        dsc.setSchemaName("blog");
 
         mpg.setDataSource(dsc);
 

@@ -1,6 +1,8 @@
 package com.daxue.enter.config;
 
 
+//直接在某一个方法上添加注解 @Async 在非本类调用此方法即为异步调用
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.aop.interceptor.AsyncUncaughtExceptionHandler;
@@ -12,9 +14,6 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import java.lang.reflect.Method;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ThreadPoolExecutor;
-
-
-//直接在某一个方法上添加注解 @Async 在非本类调用此方法即为异步调用
 
 @Configuration
 public class AsyncTaskExecutePool implements AsyncConfigurer {
