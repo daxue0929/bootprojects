@@ -11,4 +11,5 @@ public interface PubDataMapper<T> {
 
     List<T> list();
 
+
 }

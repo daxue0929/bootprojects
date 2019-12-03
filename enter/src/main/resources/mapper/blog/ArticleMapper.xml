@@ -2,4 +2,40 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.daxue.enter.mapper.ArticleMapper">
 
+    <!--
+
+        名称 + ResultMap
+
+    -->
+    <resultMap id="articleResultMap" type="com.daxue.enter.entity.Article">
+        <result property="id" column="id" />
+        <result property="title" column="title"/>
+        <result property="intro" column="intro" />
+        <result property="time" column="time" />
+        <result property="content" column="content" />
+        <result property="userId" column="user_id" />
+        <result property="discussantId" column="discussant_id" />
+        <result property="discussantContent" column="discussant_content" />
+    </resultMap>
+
+
+    <sql id="articleEntity">
+        id, title, intro, time, content, user_id, discussant_id, discussant_content
+    </sql>
+
+    <select id="list" resultMap="articleResultMap">
+      select
+      <include refid="articleEntity" />
+      FROM blog.article
+    </select>
+
+
+
+    <!--利用反射获取在保存时候应该保存到数据库的下一个id唯一标识-->
+    <select id="selectArticleNextId" >
+      select nextval('"blog"."article_id_seq"');
+    </select>
+
+
+
 </mapper>

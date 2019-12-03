@@ -4,6 +4,7 @@ package com.daxue.enter.controller;
 import com.daxue.enter.entity.Group;
 import com.daxue.enter.service.GroupService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,8 +18,9 @@ import java.util.List;
  * @author daxue0929
  * @since 2019-11-25
  */
+@CrossOrigin
 @RestController
-@RequestMapping("/function")
+@RequestMapping("/ajax/function")
 public class FunctionController {
 
     @Autowired

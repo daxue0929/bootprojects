@@ -1,0 +1,8 @@
+命名规则:
+    Controller设置跨域
+    类上设置/ajax/ 打头
+    每个方法返回 ResultData型数据
+        怎么有效的在每个方法中引入 ResultData 实例待解决. 暂时new一个
+
+
+    当前类最重要的服务层 为 manager

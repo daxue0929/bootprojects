@@ -18,11 +18,13 @@ public class ResultData {
     /**
      * code 数据状态码
      * 200 : 正常返回
+     * 404 : 未找到
+     * 500 : 内部错误
      */
     public int code;
 
-    public Object data;
+    public Object data = null;
 
-    public String desc;
+    public String desc = "";
 
 }

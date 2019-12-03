@@ -12,7 +12,7 @@ public class TestController {
 
     Logger logger = LoggerFactory.getLogger(TestController.class);
 
-    @GetMapping(value = "/")
+    @GetMapping(value = "/ajax/")
     public String test() {
         System.out.println("123");
 
