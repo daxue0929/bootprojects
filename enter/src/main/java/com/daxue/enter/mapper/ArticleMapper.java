@@ -2,6 +2,7 @@ package com.daxue.enter.mapper;
 
 import com.daxue.enter.entity.Article;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>
@@ -11,6 +12,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author daxue0929
  * @since 2019-12-01
  */
+@Mapper
 public interface ArticleMapper extends BaseMapper<Article> {
 
 }
