@@ -10,6 +10,7 @@
         <module name="enter" />
         <module name="first" />
         <module name="orm" />
+        <module name="springanalyze" />
         <module name="test" />
       </profile>
     </annotationProcessing>
@@ -19,6 +20,7 @@
       <module name="enter" options="-parameters" />
       <module name="first" options="-parameters" />
       <module name="orm" options="-parameters" />
+      <module name="springanalyze" options="-parameters" />
       <module name="test" options="-parameters" />
     </option>
   </component>
