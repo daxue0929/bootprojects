@@ -49,5 +49,4 @@ public class Article implements Serializable {
      */
     private String discussantContent;
 
-
 }
