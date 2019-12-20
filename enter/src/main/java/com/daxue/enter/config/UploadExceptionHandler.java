@@ -16,6 +16,8 @@ import java.util.Map;
 /**
  * @ControllerAdvice是一个全局数据处理软件，因此也可以在@ControllerAdvice中配置全局数据，
  * 使用@ModelAttribute注解进行配置。
+ *
+ * @ControllerAdvice 结合 @InitBinder还能实现请求参数预处理，即将表单中的数据绑定到实体类上进行一些额外的处理;
  */
 @ControllerAdvice
 public class UploadExceptionHandler {

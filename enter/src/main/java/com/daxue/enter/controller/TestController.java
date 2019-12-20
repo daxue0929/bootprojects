@@ -68,10 +68,10 @@ public class TestController {
         return result;
     }
 
+    // error
     @GetMapping(value = "/test04")
     public ResultData test04() {
         ResultData result = new ResultData();
-
         File file = new File("/static/aa.xlsx");
         System.out.println(file);
 
@@ -106,4 +106,6 @@ public class TestController {
 
         return result;
     }
+
+
 }
