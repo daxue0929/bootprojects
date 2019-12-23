@@ -2,6 +2,7 @@ package com.daxue.enter.controller;
 
 import cn.afterturn.easypoi.excel.ExcelExportUtil;
 import cn.afterturn.easypoi.excel.entity.TemplateExportParams;
+import com.daxue.enter.entity.User;
 import com.daxue.enter.util.ResultData;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.slf4j.Logger;
@@ -75,26 +76,27 @@ public class TestController {
         File file = new File("/static/aa.xlsx");
         System.out.println(file);
 
-        TemplateExportParams params = new TemplateExportParams("/static/aa.xlsx");
+        TemplateExportParams params = new TemplateExportParams("/static/aa.xlsx", true);
 
-        Map<String, Object> map = new HashMap<String, Object>();
+        Map<String, Object> map = new HashMap<>();
 
-        List<Map<String, String>> names = new ArrayList<Map<String, String>>();
-        HashMap<String, String> itemRow = new HashMap<>();
+        User user = new User();
+        List<User> users = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
-            itemRow.put("name", "王雪迪");
-
-            names.add(itemRow);
+            user.name = "真的啊";
+            users.add(user);
         }
-        map.put("maplist", names);
+        map.put("maplist", users);
+
         Workbook workbook = ExcelExportUtil.exportExcel(params, map);
-        File savefile = new File("/static/aa.xlsx");
+        File savefile = new File("/static/result/");
         if (!savefile.exists()) {
             savefile.mkdirs();
         }
         FileOutputStream fos = null;
+        String fileName = System.currentTimeMillis() +  ".xlsx";
         try {
-            fos = new FileOutputStream("/static/aa.xlsx");
+            fos = new FileOutputStream("/static/result/" + fileName);
             workbook.write(fos);
             fos.close();
         } catch (FileNotFoundException e) {
