@@ -5,8 +5,11 @@ import com.daxue.enter.entity.Article;
 import com.daxue.enter.mapper.ArticleMapper;
 import com.daxue.enter.service.ArticleService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.aop.framework.AopContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collection;
 import java.util.List;
@@ -39,5 +42,22 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
 
     public List<Article> list() {
         return mapper.list();
+    }
+
+    /**
+     * 在一个事务中调用另一个事务 方法测试
+     */
+    @Transactional
+    public void doSomeThing() {
+
+        // 调用插入数据库的事务
+        ((ArticleServiceImpl) AopContext.currentProxy()).insert();
+
+        // 调用其他系统
+    }
+
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
+    public void insert() {
+        // 数据库事务写入操作
     }
 }
