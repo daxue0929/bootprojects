@@ -1,17 +1,18 @@
-package com.daxue.enter.entity;
+package com.daxue.enter.dto;
 
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.daxue.enter.entity.Role;
 import lombok.Data;
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
-import java.util.Collection;
+import java.io.Serializable;
+import java.util.List;
 
 @Data
 @Component
 @TableName(value = "base.user")
-public class User implements UserDetails {
+public class UserDTO implements UserDetails, Serializable {
 
     public Integer id;
 
@@ -19,18 +20,10 @@ public class User implements UserDetails {
 
     public Integer age;
 
-    public Short status;
-
-    public String account;
-
     public String password;
 
-    public Integer groupId;
+    private List<Role> authorities;
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
-    }
 
     @Override
     public String getUsername() {
@@ -39,21 +32,20 @@ public class User implements UserDetails {
 
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
-
     @Override
     public boolean isEnabled() {
-        return false;
+        return true;
     }
 }
