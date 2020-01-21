@@ -1,5 +1,6 @@
 package com.daxue.enter.config;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.daxue.enter.entity.User;
 import com.daxue.enter.mapper.UserMapper;
 import com.google.common.hash.BloomFilter;
@@ -26,7 +27,8 @@ public class BloomFilterHelper<S> {
      */
     @PostConstruct
     public void initBloomFilter() {
-        List<User> userList = userMapper.selectList(null);
+        QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
+        List<User> userList = userMapper.selectList(userQueryWrapper);
         if (CollectionUtils.isEmpty(userList)) {
             return;
         }
