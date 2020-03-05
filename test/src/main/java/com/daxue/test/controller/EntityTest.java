@@ -2,6 +2,9 @@ package com.daxue.test.controller;
 
 import lombok.Data;
 
+/**
+ * @author Admin
+ */
 @Data
 public class EntityTest {
     public String systemtime;

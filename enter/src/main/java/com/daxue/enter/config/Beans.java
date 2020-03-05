@@ -1,0 +1,9 @@
+package com.daxue.enter.config;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportResource;
+
+@Configuration
+@ImportResource("classpath:beans-xml.xml")
+public class Beans {
+}

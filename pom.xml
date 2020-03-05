@@ -21,6 +21,7 @@
         <module>orm</module>
         <module>enter</module>
         <module>springanalyze</module>
+        <module>basic-web</module>
     </modules>
 
     <dependencies>

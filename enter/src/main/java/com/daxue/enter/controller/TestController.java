@@ -2,11 +2,13 @@ package com.daxue.enter.controller;
 
 import cn.afterturn.easypoi.excel.ExcelExportUtil;
 import cn.afterturn.easypoi.excel.entity.TemplateExportParams;
-import com.daxue.enter.entity.User;
+import com.daxue.enter.Hello;
+import com.daxue.enter.result.Result;
 import com.daxue.enter.util.ResultData;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,6 +27,9 @@ public class TestController {
 
     Logger logger = LoggerFactory.getLogger(TestController.class);
 
+    @Autowired
+    public Hello hello;
+
     @GetMapping(value = "/ajax/")
     public String test() {
         System.out.println("123");
@@ -33,14 +38,14 @@ public class TestController {
     }
 
     @GetMapping(value = "/hello")
-    public String go () {
+    public Result go (@RequestParam("name") String name) {
         String a = "爱你啊";
 
         logger.info("爱你");
         logger.error("das");
         logger.warn("today is {}", a);
 
-        return "Hello World";
+        return Result.success("hello world");
     }
 
     /**
@@ -76,27 +81,27 @@ public class TestController {
         File file = new File("/static/aa.xlsx");
         System.out.println(file);
 
-        TemplateExportParams params = new TemplateExportParams("/static/aa.xlsx", true);
+        TemplateExportParams params = new TemplateExportParams("/static/aa.xlsx");
 
-        Map<String, Object> map = new HashMap<>();
+        Map<String, Object> map = new HashMap<String, Object>();
 
-        User user = new User();
-        List<User> users = new ArrayList<>();
+        List<Map<String, String>> names = new ArrayList<Map<String, String>>();
+        HashMap<String, String> itemRow = new HashMap<>();
         for (int i = 0; i < 3; i++) {
-            user.name = "真的啊";
-            users.add(user);
-        }
-        map.put("maplist", users);
+            itemRow.put("name", "王雪迪");
 
+            names.add(itemRow);
+        }
+        map.put("maplist", names);
         Workbook workbook = ExcelExportUtil.exportExcel(params, map);
-        File savefile = new File("/static/result/");
+        File savefile = new File("/static/aa.xlsx");
         if (!savefile.exists()) {
             savefile.mkdirs();
         }
         FileOutputStream fos = null;
         String fileName = System.currentTimeMillis() +  ".xlsx";
         try {
-            fos = new FileOutputStream("/static/result/" + fileName);
+            fos = new FileOutputStream("/static/aa.xlsx");
             workbook.write(fos);
             fos.close();
         } catch (FileNotFoundException e) {
@@ -109,6 +114,11 @@ public class TestController {
         return result;
     }
 
+    @GetMapping(value = "test05")
+    public Result test05() {
+        String jerry = hello.sayHello("jerry");
+        return Result.success(jerry);
+    }
 
 
 }

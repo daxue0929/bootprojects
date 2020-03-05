@@ -1,26 +1,32 @@
 package com.daxue.test.controller;
 
-import com.fasterxml.jackson.databind.util.JSONPObject;
+import com.daxue.test.utils.RedisUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.http.HttpRequest;
-import org.springframework.web.bind.annotation.*;
-import sun.misc.Request;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.http.HttpServletRequest;
-
+/**
+ * @author Admin
+ */
 @RestController
 public class VerifyController {
 
+    Logger logger = LoggerFactory.getLogger(VerifyController.class);
 
+    @Autowired
+    public RedisUtil redisUtil;
 
     @PostMapping(value = "/getMsisdn")
     public String getMsisdn(@RequestBody EntityTest entityTest
     ) {
-        System.out.println(entityTest.toString());
-        System.out.println("das");
 
-        return "后端返回的数据";
+        redisUtil.setValue("entityTest", entityTest);
+        logger.info(entityTest.toString());
+
+        return "data:  " + entityTest.toString();
     }
 
     @PostMapping(value = "/test005")
