@@ -2,3 +2,19 @@ spring:
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
+
+
+# 配置redis
+redis:
+  database: 0
+  host: 127.0.0.1
+  password: 123456
+  port: 6379
+  timeout: 3000
+  jedis:
+    pool:
+      max-idle: 500
+      min-idle: 50
+      max-active: 2000
+      max-wait: 1000
+  testOnBorrow: true
