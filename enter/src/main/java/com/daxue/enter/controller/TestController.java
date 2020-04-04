@@ -3,17 +3,21 @@ package com.daxue.enter.controller;
 import cn.afterturn.easypoi.excel.ExcelExportUtil;
 import cn.afterturn.easypoi.excel.entity.TemplateExportParams;
 import com.daxue.enter.Hello;
+import com.daxue.enter.config.PassToken;
+import com.daxue.enter.entity.User;
 import com.daxue.enter.result.Result;
+import com.daxue.enter.util.JWTUtil;
 import com.daxue.enter.util.ResultData;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -22,7 +26,7 @@ import java.io.IOException;
 import java.util.*;
 
 @CrossOrigin
-@RestController
+@Controller
 public class TestController {
 
     Logger logger = LoggerFactory.getLogger(TestController.class);
@@ -30,7 +34,7 @@ public class TestController {
     @Autowired
     public Hello hello;
 
-    @GetMapping(value = "/ajax/")
+    @RequestMapping(value = "/ajax")
     public String test() {
         System.out.println("123");
 
@@ -40,6 +44,11 @@ public class TestController {
     @GetMapping(value = "/hello")
     public Result go (@RequestParam("name") String name) {
         String a = "爱你啊";
+
+
+        String token = JWTUtil.getToken(new User("admin", "123"));
+
+//        currentUser.login(token);
 
         logger.info("爱你");
         logger.error("das");
@@ -115,10 +124,13 @@ public class TestController {
     }
 
     @GetMapping(value = "test05")
+    @PassToken
     public Result test05() {
-        String jerry = hello.sayHello("jerry");
+        String jerry = hello.sayHello("test05");
         return Result.success(jerry);
     }
+
+
 
 
 }

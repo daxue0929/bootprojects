@@ -6,9 +6,8 @@ import com.daxue.enter.entity.User;
 
 public class JWTUtil {
 
-    public String getToken(User user) {
-        String token="";
-        token= JWT.create().withAudience(String.valueOf(user.getId()))
+    public static String getToken(User user) {
+        String token= JWT.create().withAudience(String.valueOf(user.getName()))
                 .sign(Algorithm.HMAC256(user.getPassword()));
         return token;
     }
