@@ -12,7 +12,5 @@ public class Test02 {
 
         File file = new File("/usr/local/backmgr/upload/test.zip");
         System.out.println(file.length());
-
-
     }
 }
