@@ -4,6 +4,7 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/basic-web" />
     <file type="web" url="file://$PROJECT_DIR$/first" />
+    <file type="web" url="file://$PROJECT_DIR$/oneToWeb" />
   </component>
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />

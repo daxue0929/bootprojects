@@ -24,6 +24,7 @@
         <module>basic-web</module>
         <module>first</module>
         <module>autoWechatSend</module>
+        <module>oneToWeb</module>
     </modules>
 
     <dependencies>

@@ -12,6 +12,7 @@
         <module name="basicweb" />
         <module name="enter" />
         <module name="first" />
+        <module name="oneToWeb" />
         <module name="orm" />
         <module name="springanalyze" />
         <module name="test" />
@@ -25,6 +26,7 @@
       <module name="basicweb" options="-parameters" />
       <module name="enter" options="-parameters" />
       <module name="first" options="-parameters" />
+      <module name="oneToWeb" options="-parameters" />
       <module name="orm" options="-parameters" />
       <module name="springanalyze" options="-parameters" />
       <module name="test" options="-parameters" />
