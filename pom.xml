@@ -27,6 +27,7 @@
     </modules>
 
     <dependencies>
+        <!--不要写任何的依赖的信息，每个子项目完整的管理自己依赖的版本-->
 
         <!--springboot 基础依赖信息 start -->
         <!--<dependency>-->
