@@ -27,6 +27,10 @@ public class RedisConfig {
         ObjectMapper om = new ObjectMapper();
         om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
         om.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
+
+//        PolymorphicTypeValidator ptv = BasicPolymorphicTypeValidator.builder().allowIfSubType(User.class).build();
+//        om.activateDefaultTyping(ptv);
+
         jackson2JsonRedisSerializer.setObjectMapper(om);
 
         RedisTemplate<String, Object> template = new RedisTemplate<>();
