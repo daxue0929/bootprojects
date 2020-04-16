@@ -28,8 +28,14 @@ public class RedisConfig {
         om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
         om.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
 
+//        om.activateDefaultTyping(BasicPolymorphicTypeValidator.builder().build(),
+//                ObjectMapper.DefaultTyping.NON_FINAL);
+
 //        PolymorphicTypeValidator ptv = BasicPolymorphicTypeValidator.builder().allowIfSubType(User.class).build();
 //        om.activateDefaultTyping(ptv);
+
+        om.activateDefaultTyping(om.getPolymorphicTypeValidator(),
+                ObjectMapper.DefaultTyping.NON_FINAL);
 
         jackson2JsonRedisSerializer.setObjectMapper(om);
 

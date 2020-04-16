@@ -3,13 +3,14 @@ package com.daxue.test.A;
 import com.daxue.test.utils.RedisUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 /**
  * @author wangxuedi
  * Date: 2020/4/16 9:15
  * describe:
  */
-//@Configuration
+@Configuration
 public class TestRedis {
 
     @Autowired
