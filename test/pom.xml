@@ -63,6 +63,13 @@
             <version>1.2.62</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/lennart/cpdetector -->
+        <!-- https://mvnrepository.com/artifact/net.sourceforge.cpdetector/cpdetector -->
+        <!-- https://mvnrepository.com/artifact/cpdetector/cpdetector -->
+
+
+
+
 
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -110,6 +117,11 @@
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
             <version>2.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.ws.commons.axiom</groupId>
+            <artifactId>axiom-api</artifactId>
+            <version>1.2.20</version>
         </dependency>
 
 
