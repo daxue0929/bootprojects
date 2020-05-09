@@ -13,7 +13,7 @@ public class Test03 {
 
     public static void main(String[] args) {
         try {
-//            d
+            // 把任意txt文本转化为UTF-8格式的文本
             String inputFileUrl = "I:/test/2017-05-14一车队 - 副本.txt";
 
             String outputFileUrl = "I:/test/2017-05-14一车队 - 副本_utf_8.txt";
