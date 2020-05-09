@@ -1,15 +1,28 @@
 package com.daxue.enter.config;
 
-import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+//@Configuration
+//public class WebMvcConfig implements WebMvcConfigurer {
+//
+//    @Override
+//    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+//        registry.addResourceHandler("/view/**").addResourceLocations("classpath:/static/");
+//    }
 
-@Configuration
-public class WebMvcConfig extends WebMvcConfigurerAdapter {
+//    @Override
+//    public void addInterceptors(InterceptorRegistry registry) {
 
-    @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        super.addResourceHandlers(registry);
-        registry.addResourceHandler("/**").addResourceLocations("classpath:/static/");
-    }
-}
+//        registry.addInterceptor(new LoggerInterceptor())
+//                .addPathPatterns("/**")
+//                .excludePathPatterns("/test05");
+
+//        registry.addInterceptor(new AuthenticationInterceptor())
+//                .addPathPatterns("/api/**")
+//                .excludePathPatterns("/test06");
+//    }
+
+//    @Override
+//    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+//        configurer.enable();
+////        configurer.enable("defaultServletName");
+//    }
+//}

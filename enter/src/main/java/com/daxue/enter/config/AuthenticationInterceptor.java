@@ -9,7 +9,6 @@ import com.daxue.enter.entity.User;
 import com.daxue.enter.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -53,7 +52,7 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
                 try {
                     userId = JWT.decode(token).getAudience().get(0);
                 } catch (JWTDecodeException j) {
-                    throw new RuntimeException("401");
+                    throw new RuntimeException("401你好");
                 }
                 User user = userService.selectById(Integer.parseInt(userId));
                 if (user == null) {
