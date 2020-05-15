@@ -5,6 +5,7 @@
     <file type="web" url="file://$PROJECT_DIR$/basic-web" />
     <file type="web" url="file://$PROJECT_DIR$/first" />
     <file type="web" url="file://$PROJECT_DIR$/oneToWeb" />
+    <file type="web" url="file://$PROJECT_DIR$/test" />
   </component>
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />

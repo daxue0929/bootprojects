@@ -7,7 +7,6 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.PostConstruct;
 import java.util.List;
 import java.util.Set;
 
@@ -23,10 +22,10 @@ public class ATestContrller {
     @Autowired
     Keys keys;
 
-    @PostConstruct
-    public void init () {
-        keys.setKeys(redisUtil.getAllSet("key"));
-    }
+//    @PostConstruct
+//    public void init () {
+//        keys.setKeys(redisUtil.getAllSet("key"));
+//    }
 
 //    @GetMapping(value = "/a/message")
 //    public Object mesage() {
