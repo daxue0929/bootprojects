@@ -5,10 +5,13 @@ import com.alibaba.fastjson.JSONObject;
 import com.daxue.test.utils.HttpClientUtils;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.io.FileUtils;
+import org.springframework.util.Base64Utils;
 import sun.misc.BASE64Encoder;
 
 import java.io.File;
+import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
@@ -21,18 +24,56 @@ import java.util.stream.Collectors;
  */
 public class Test05 {
 
+    public static Test05 instance;
+
+    int a;
+
     public static final String apiKey = "api_zhongshangsd";
     public static final String secret = "5ecb636e3b5bfbe6448d01a6";
     public static int timestamp = (int) (System.currentTimeMillis()/1000); // 秒
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UnsupportedEncodingException {
 //        reportedSign("视频短信测试");
-
 //        testJSON();
+//        base64();
+//        encode();
+//        new Test05().test();
+    }
+
+    public void test() {
+        System.out.println("dasd");
     }
 
 
+    public static void encode() throws UnsupportedEncodingException {
+        String s = "测试";
+        String v = "ceshi";
 
+
+        String encodeS = URLEncoder.encode(s, "UTF-8");
+        String encodeV = URLEncoder.encode(v, "UTF-8");
+
+        System.out.println(encodeS);
+        System.out.println(encodeV);
+    }
+
+    public static void base64() throws UnsupportedEncodingException {
+        String title = "你好";
+
+
+        byte[] bytes = title.getBytes();
+
+        String s = Base64.getEncoder().encodeToString(bytes);
+        System.out.println(s);
+
+
+        byte[] gbks = title.getBytes("GBK");
+//        String j = Base64.getEncoder().encodeToString(gbks);
+        String j = Base64Utils.encodeToString(gbks);
+        System.out.println(j);
+
+
+    }
 
 
     public static void testJSON() {
@@ -122,6 +163,35 @@ public class Test05 {
             System.out.println(e.getMessage());
         }
 
+
+    }
+
+
+
+
+
+    public static void readStram() {
+
+        StringBuffer request = new StringBuffer();
+        request.append("\n" +
+                "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" +
+                "<mms>\n" +
+                "    <result>0</result>\n" +
+                "    <audis>\n" +
+                "        <item>\n" +
+                "            <mid>1907052123110000000</mid>\n" +
+                "            <time>2019-07-05 21:24:04</time>\n" +
+                "            <status>0</status>\n" +
+                "            <desc>success</desc>\n" +
+                "        </item>\n" +
+                "        <item>\n" +
+                "            <mid>1907052123110000000</mid>\n" +
+                "            <time>2019-07-05 21:24:04</time>\n" +
+                "            <status>0</status>\n" +
+                "            <desc>success</desc>\n" +
+                "        </item>\n" +
+                "    </audis>\n" +
+                "</mms>");
 
     }
 }
