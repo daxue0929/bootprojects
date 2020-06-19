@@ -11,10 +11,7 @@ import sun.misc.BASE64Encoder;
 import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
-import java.util.Base64;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -38,6 +35,19 @@ public class Test05 {
 //        base64();
 //        encode();
 //        new Test05().test();
+//        test06();
+        test07();
+    }
+
+
+    public static void test07() {
+
+
+    }
+
+    public static void test06() {
+        String aa = UUID.randomUUID().toString().trim().replaceAll("-", "");
+        System.out.println(aa);
     }
 
     public void test() {

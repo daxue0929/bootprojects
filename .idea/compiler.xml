@@ -7,15 +7,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="autoWechatSend" />
-        <module name="basic-web" />
-        <module name="basicweb" />
         <module name="enter" />
-        <module name="first" />
-        <module name="oneToWeb" />
-        <module name="orm" />
-        <module name="springanalyze" />
         <module name="test" />
+        <module name="basicweb" />
+        <module name="autoWechatSend" />
+        <module name="oneToWeb" />
+        <module name="springanalyze" />
+        <module name="first" />
+        <module name="orm" />
+        <module name="basic-web" />
       </profile>
     </annotationProcessing>
   </component>
