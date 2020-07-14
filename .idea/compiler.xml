@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="mplus" />
         <module name="enter" />
         <module name="test" />
         <module name="basicweb" />
@@ -26,6 +27,7 @@
       <module name="basicweb" options="-parameters" />
       <module name="enter" options="-parameters" />
       <module name="first" options="-parameters" />
+      <module name="mplus" options="-parameters" />
       <module name="oneToWeb" options="-parameters" />
       <module name="orm" options="-parameters" />
       <module name="springanalyze" options="-parameters" />
