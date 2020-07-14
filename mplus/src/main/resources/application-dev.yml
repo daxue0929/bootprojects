@@ -1,11 +1,10 @@
 server:
   port: 8092
 
-pgsql:
+spring:
   datasource:
-    url: jdbc:postgresql://39.107.127.218:5432/study
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://39.107.127.218:5431/study
     name: study
     username: root
     password: root
-    type: com.alibaba.druid.pool.DruidDataSource
-    driver-class-name: org.postgresql.Driver

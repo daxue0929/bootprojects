@@ -7,9 +7,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="mplus" />
-        <module name="enter" />
         <module name="test" />
+        <module name="enter" />
+        <module name="mplus" />
         <module name="basicweb" />
         <module name="autoWechatSend" />
         <module name="oneToWeb" />
