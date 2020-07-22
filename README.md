@@ -14,6 +14,11 @@ Are you ready to face the coding! Let's go.
     + 一些半成品的功能实现,或者test代码会放在这个项目中去.
     + 先学习在完整的实验.
 -------
+- 语录:  
+我会集成许多的工具类到这些子项目的utils包下.  
+这或许是个好习惯.  
+奥利给!
+    + study
 
 
 
