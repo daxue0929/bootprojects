@@ -3,6 +3,7 @@ package com.daxue.test.config;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.jsontype.BasicPolymorphicTypeValidator;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -26,10 +27,10 @@ public class RedisConfig {
 
         ObjectMapper om = new ObjectMapper();
         om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
-        om.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
+//        om.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
 
-//        om.activateDefaultTyping(BasicPolymorphicTypeValidator.builder().build(),
-//                ObjectMapper.DefaultTyping.NON_FINAL);
+        om.activateDefaultTyping(BasicPolymorphicTypeValidator.builder().build(),
+                ObjectMapper.DefaultTyping.NON_FINAL);
 
 //        PolymorphicTypeValidator ptv = BasicPolymorphicTypeValidator.builder().allowIfSubType(User.class).build();
 //        om.activateDefaultTyping(ptv);
