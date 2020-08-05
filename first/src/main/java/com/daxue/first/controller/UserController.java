@@ -16,8 +16,9 @@ import java.util.List;
 @Controller
 @CrossOrigin
 public class UserController {
+
     @Autowired
-    private UserService userService;
+    public UserService userService;
 
     Logger logger = LoggerFactory.getLogger(UserController.class);
 
