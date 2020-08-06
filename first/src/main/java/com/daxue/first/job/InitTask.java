@@ -13,10 +13,12 @@ import org.quartz.TriggerKey;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.stereotype.Component;
 
 import java.sql.Date;
 
 @Slf4j
+@Component
 public class InitTask implements ApplicationRunner {
 
     @Autowired
@@ -36,7 +38,7 @@ public class InitTask implements ApplicationRunner {
             quartz.setJobGroup("test");
             quartz.setJobName("测试");
             quartz.setDescription("测试任务,每30秒后台打印数据");
-            quartz.setJobClassName("top.lrshuai.timer.job.HelloJob");
+            quartz.setJobClassName("com.daxue.first.job.HelloJob");
             quartz.setCronExpression("0/30 * * * * ?");
 
 
@@ -46,16 +48,21 @@ public class InitTask implements ApplicationRunner {
 
             //添加JobDataMap数据
             job.getJobDataMap().put("blog", "https://rstyro.github.io/blog/");
+
             // 触发时间点
             CronScheduleBuilder cronScheduleBuilder = CronScheduleBuilder.cronSchedule(quartz.getCronExpression());
+
             Trigger trigger = TriggerBuilder.newTrigger().withIdentity("trigger"+quartz.getJobName(), quartz.getJobGroup())
                     .startNow().withSchedule(cronScheduleBuilder).build();
 
 
             //交由Scheduler安排触发
             scheduler.scheduleJob(job, trigger);
+
             TriggerKey triggerKey = TriggerKey.triggerKey(quartz.getJobName(), quartz.getJobGroup());
             Trigger.TriggerState triggerState = scheduler.getTriggerState(triggerKey);
+
+
             quartz.setJobStatus(JobStatus.RUN.getStatus());
             quartz.setCreateTime(new Date(new java.util.Date().getTime()));
 

@@ -1,9 +1,7 @@
 package com.daxue.first.job;
 
-import org.quartz.DisallowConcurrentExecution;
-import org.quartz.Job;
-import org.quartz.JobExecutionContext;
-import org.quartz.JobExecutionException;
+import com.alibaba.fastjson.JSONObject;
+import org.quartz.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,6 +16,9 @@ public class HelloJob implements Job, Serializable {
     @Override
     public void execute(JobExecutionContext context) throws JobExecutionException {
         try {
+
+            JobDataMap jobDataMap = context.getJobDetail().getJobDataMap();
+            logger.info("JobDataMap json: {}", JSONObject.toJSONString(jobDataMap));
             logger.info("Hello Job执行时间: " + new Date()+"  Blog:"+context.getJobDetail().getJobDataMap().get("blog"));
             Thread.sleep(1000 * 5);
             System.out.println("================执行完成========================");
