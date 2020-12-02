@@ -18,6 +18,9 @@
         <option value="$PROJECT_DIR$/test/pom.xml" />
         <option value="$PROJECT_DIR$/first/pom.xml" />
         <option value="$PROJECT_DIR$/mplus/pom.xml" />
+        <option value="$PROJECT_DIR$/sdk/pom.xml" />
+        <option value="$PROJECT_DIR$/test-zookeeper/pom.xml" />
+        <option value="$PROJECT_DIR$/demo-consumer/pom.xml" />
       </list>
     </option>
   </component>

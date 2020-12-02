@@ -25,6 +25,7 @@
         <module>first</module>
         <module>autoWechatSend</module>
         <module>oneToWeb</module>
+        <module>sdk</module>
     </modules>
 
     <dependencies>

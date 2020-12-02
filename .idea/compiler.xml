@@ -7,10 +7,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="test" />
-        <module name="enter" />
         <module name="mplus" />
+        <module name="demo-consumer" />
+        <module name="enter" />
+        <module name="test" />
         <module name="basicweb" />
+        <module name="sdk" />
+        <module name="test-zookeeper" />
         <module name="autoWechatSend" />
         <module name="oneToWeb" />
         <module name="springanalyze" />
@@ -25,13 +28,16 @@
       <module name="autoWechatSend" options="-parameters" />
       <module name="basic-web" options="-parameters" />
       <module name="basicweb" options="-parameters" />
+      <module name="demo-consumer" options="-parameters" />
       <module name="enter" options="-parameters" />
       <module name="first" options="-parameters" />
       <module name="mplus" options="-parameters" />
       <module name="oneToWeb" options="-parameters" />
       <module name="orm" options="-parameters" />
+      <module name="sdk" options="-parameters" />
       <module name="springanalyze" options="-parameters" />
       <module name="test" options="-parameters" />
+      <module name="test-zookeeper" options="-parameters" />
     </option>
   </component>
 </project>
