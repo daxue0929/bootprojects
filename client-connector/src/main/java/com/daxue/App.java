@@ -11,6 +11,9 @@ import java.util.List;
 /**
  * Hello world!
  *
+ * 对于treeMap的数据结构是都是可以转成xml格式的数据
+ * 简单的xml格式数据，比如节点上是没有属性，只有标签的那种xml是可以转化为json或者treeMap数据结构的。
+ *
  */
 public class App {
     public static void main( String[] args ) {

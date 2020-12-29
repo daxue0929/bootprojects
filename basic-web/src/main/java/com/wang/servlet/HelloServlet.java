@@ -21,7 +21,7 @@ public class HelloServlet extends HttpServlet {
         String servletPath = req.getServletPath();
 
 
-        req.getRequestDispatcher("/WEB-INF/jsp/hello.jsp").forward(req,resp);
+        req.getRequestDispatcher("/hello.jsp").forward(req,resp);
     }
 
     @Override
