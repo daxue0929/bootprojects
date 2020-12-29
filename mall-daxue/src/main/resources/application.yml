@@ -1,0 +1,19 @@
+server:
+  port: 9090
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/mall?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false
+    username: root
+    password: wangxuedi3319@
+    driver-class-name: com.mysql.jdbc.Driver
+
+  security:
+    user:
+      name: user
+      password: 123
+
+mybatis:
+  mapper-locations:
+    - classpath:mapper/*.xml
+    - classpath*:com/**/mapper/*.xml

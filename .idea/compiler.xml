@@ -7,19 +7,22 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="mplus" />
+        <module name="oneToWeb" />
+        <module name="client-connector" />
+        <module name="test-zookeeper" />
+        <module name="basic-web" />
+        <module name="autoWechatSend" />
+        <module name="book" />
         <module name="demo-consumer" />
-        <module name="enter" />
+        <module name="springanalyze" />
+        <module name="mall-daxue" />
         <module name="test" />
+        <module name="orm" />
         <module name="basicweb" />
         <module name="sdk" />
-        <module name="test-zookeeper" />
-        <module name="autoWechatSend" />
-        <module name="oneToWeb" />
-        <module name="springanalyze" />
+        <module name="mplus" />
         <module name="first" />
-        <module name="orm" />
-        <module name="basic-web" />
+        <module name="enter" />
       </profile>
     </annotationProcessing>
   </component>
@@ -28,9 +31,12 @@
       <module name="autoWechatSend" options="-parameters" />
       <module name="basic-web" options="-parameters" />
       <module name="basicweb" options="-parameters" />
+      <module name="book" options="-parameters" />
+      <module name="client-connector" options="" />
       <module name="demo-consumer" options="-parameters" />
       <module name="enter" options="-parameters" />
       <module name="first" options="-parameters" />
+      <module name="mall-daxue" options="-parameters" />
       <module name="mplus" options="-parameters" />
       <module name="oneToWeb" options="-parameters" />
       <module name="orm" options="-parameters" />

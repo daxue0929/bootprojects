@@ -1,0 +1,18 @@
+package ${package.ServiceImpl};
+
+import ${package.Entity}.${entity};
+import ${package.Mapper}.${table.mapperName};
+import ${superServiceImplClassPackage};
+import org.springframework.stereotype.Service;
+
+/**
+ *
+ * @ClassName: ${entity}Service
+ * @Description: TODO(这里用一句话描述这个类的作用)
+ * @author ${author}
+ * @date ${date}
+ */
+@Service
+public class ${entity}Service extends ${superServiceImplClass}<${table.mapperName}, ${entity}> {
+
+}

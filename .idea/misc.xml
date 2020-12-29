@@ -21,6 +21,8 @@
         <option value="$PROJECT_DIR$/sdk/pom.xml" />
         <option value="$PROJECT_DIR$/test-zookeeper/pom.xml" />
         <option value="$PROJECT_DIR$/demo-consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/mall-daxue/pom.xml" />
+        <option value="$PROJECT_DIR$/book/pom.xml" />
       </list>
     </option>
   </component>
