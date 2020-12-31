@@ -25,7 +25,8 @@ public class SysUserDaoImpl implements SysUserDao {
     public SysUser selectOne(Integer id) throws SQLException {
         SysUser sysUser = new SysUser();
         Statement statement = connection.createStatement();
-        String sql = "select id, name, password, email, phone,createTime, updateTime,account,description from sys_user where id = " + id;
+        String sql = "select id, name, password, email, phone," +
+                "createTime, updateTime,account,description from sys_user where id = " + id;
         ResultSet rs = statement.executeQuery(sql);
         while (rs.next()) {
             sysUser.setId(rs.getInt("id"));
