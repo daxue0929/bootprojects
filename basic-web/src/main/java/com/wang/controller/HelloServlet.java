@@ -1,4 +1,4 @@
-package com.wang.servlet;
+package com.wang.controller;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
