@@ -1,0 +1,6 @@
+com\daxue\controller\AController.class
+com\daxue\services\RedisService.class
+com\daxue\pojo\User.class
+com\daxue\utils\RedisConfig.class
+com\daxue\OrmApplication.class
+com\daxue\dao\UserMapper.class

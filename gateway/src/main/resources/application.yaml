@@ -1,0 +1,9 @@
+server:
+  port: 6010
+
+spring:
+  redis:
+    port: 6379
+    username: root
+    password:
+    host: localhost
