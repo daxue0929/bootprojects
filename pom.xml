@@ -27,6 +27,7 @@
         <module>oneToWeb</module>
         <module>sdk</module>
         <module>client-connector</module>
+        <module>cloud-parents</module>
     </modules>
 
     <dependencies>
